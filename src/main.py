@@ -17,7 +17,6 @@ def init():
     wView.init()
 
 
-
 @window.event
 def on_draw():
     window.clear()
@@ -34,6 +33,5 @@ def update(dt):
 
 init()
 pyglet.clock.schedule_interval(update, 1.0/60.0)
-
 
 pyglet.app.run()
