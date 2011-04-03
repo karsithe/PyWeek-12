@@ -2,19 +2,18 @@ import pyglet
 from pyglet.gl import *
 from pyglet.window import key
 from pyglet.window import mouse
+from sprite import AnimSprite
 from worldview import WorldView
 
 window = pyglet.window.Window(600,300)
 
-#@window.event
-#def on_mouse_drag(x, y, dx, dy, button, modifiers):
-
-#@window.event
-#def on_mouse_release(x, y, button, modifiers):
 
 wView = WorldView()
 
+
 def init():
+    glEnable(GL_BLEND)
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
     wView.init()
 
 
@@ -35,5 +34,6 @@ def update(dt):
 
 init()
 pyglet.clock.schedule_interval(update, 1.0/60.0)
+
 
 pyglet.app.run()
