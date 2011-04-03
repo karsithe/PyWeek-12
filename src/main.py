@@ -12,14 +12,15 @@ wView = WorldView()
 def init():
   glEnable(GL_BLEND)
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+  glClearColor(1.0,1.0,1.0,1.0)
   char.init()
   wView.init()
 
 @window.event
 def on_draw():
   window.clear()
-  char.draw()
   wView.draw()
+  char.draw()
  
 def update(dt):
     char.update(dt)

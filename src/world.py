@@ -8,14 +8,13 @@ class World:
         self.entityList = []
         self.scenery = []
         self.interactables = []
-
         self.player = None
 
 
     def init(self, levelNo):
         """Load in level and prepare for use"""
-        blobImage = pyglet.image.load("../assets/testasset.png")
-        blob = pyglet.sprite.Sprite(blobImage, x = 66*levelNo, y = -32)
+        blobImage = pyglet.image.load("../assets/house0.png")
+        blob = pyglet.sprite.Sprite(blobImage, x = 66*levelNo, y = 0)
         self.entityList.append(blob)
 
 
