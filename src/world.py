@@ -1,5 +1,5 @@
 """World module holding all entities in that world and drawing to its own tile"""
-
+import pyglet
 from pyglet.gl import *
 
 class World:
@@ -9,26 +9,29 @@ class World:
         self.scenery = []
         self.interactables = []
         
-        self.position = 0;
+        self.player = None
         
+    
     def init(self):
         """Load in level and prepare for use"""
-        
-        pass
+        blobImage = pyglet.image.load("../assets/testasset.png")
+        blob = pyglet.sprite.Sprite(blobImage, x = 50, y = 0)
+        self.entityList.append(blob)
     
     
     def update(self, dt):
-        for entity in entityList:
+        # update everything in this world
+        for entity in self.entityList:
             entity.update(dt)
         
+        #update player if it exists
         
-        pass
+        
     
     def draw(self):
+        # maybe convert to batches later
+        for drawable in self.entityList:
+            drawable.draw()
         
-        
-        pass
-
-
     
     
