@@ -15,13 +15,13 @@ class Character:
     self.sprite.playAnim("walkleft")
   
   def update(self, dt):
-    handleInput
+    self.handleInput()
   
   def draw(self):
     self.sprite.draw()
     pass
  
-  def handleInput():
+  def handleInput(self):
     if self.input.isDown(key.A) or self.input.isDown(key.LEFT):
       self.sprite.playAnim("walkleft")
     if self.input.isDown(key.D) or self.input.isDown(key.RIGHT):

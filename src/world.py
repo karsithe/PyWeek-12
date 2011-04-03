@@ -8,30 +8,29 @@ class World:
         self.entityList = []
         self.scenery = []
         self.interactables = []
-        
+
         self.player = None
-        
-    
-    def init(self):
+
+
+    def init(self, levelNo):
         """Load in level and prepare for use"""
         blobImage = pyglet.image.load("../assets/testasset.png")
-        blob = pyglet.sprite.Sprite(blobImage, x = 50, y = 0)
+        blob = pyglet.sprite.Sprite(blobImage, x = 66*levelNo, y = -32)
         self.entityList.append(blob)
-    
-    
+
+
     def update(self, dt):
         # update everything in this world
         for entity in self.entityList:
             entity.update(dt)
-        
+
         #update player if it exists
-        
-        
-    
+
+
+
     def draw(self):
         # maybe convert to batches later
         for drawable in self.entityList:
             drawable.draw()
-        
-    
-    
+
+
